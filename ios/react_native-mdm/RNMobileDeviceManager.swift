@@ -1,7 +1,6 @@
 import Foundation
 let APP_CONFIG_CHANGED = "react-native-mdm/managedAppConfigDidChange"
 let MDM_CONFIGURATION_KEY = "com.apple.configuration.managed"
-let MDM_CACHED_CONFIGURATION_KEY = "com.appconfig.configuration.persisted"
 @objc(MobileDeviceManager)
 class RNMobileDeviceManager: RCTEventEmitter {
     //MARK: Lifecycle
@@ -9,7 +8,6 @@ class RNMobileDeviceManager: RCTEventEmitter {
         super.init()
         NotificationCenter.default.addObserver(forName: UserDefaults.didChangeNotification, object: nil, queue: OperationQueue.main) { notification in
             self.sendEvent(withName: APP_CONFIG_CHANGED, body: self.getAppConfig() ?? false)
-            self.persistConfig(self.getAppConfig()) // Not sure this is really important - not leveraged in this module
         }
     }
     deinit {
@@ -87,15 +85,5 @@ class RNMobileDeviceManager: RCTEventEmitter {
                 resolve(didSucceed)
             }
         } 
-    }
-    //MARK: Saving persistent copy
-    func persistConfig(_ obj:[String:Any]?) {
-        let d = UserDefaults.standard
-        if let o = obj {
-            d.set(o, forKey: MDM_CACHED_CONFIGURATION_KEY)
-        } else {
-            d.removeObject(forKey: MDM_CACHED_CONFIGURATION_KEY)
-        }
-        d.synchronize()
     }
 }
