@@ -4,16 +4,23 @@ let MDM_CONFIGURATION_KEY = "com.apple.configuration.managed"
 @objc(MobileDeviceManager)
 class RNMobileDeviceManager: RCTEventEmitter {
     //MARK: Lifecycle
+    var listeners = 0
     override init() {
         super.init()
         NotificationCenter.default.addObserver(forName: UserDefaults.didChangeNotification, object: nil, queue: OperationQueue.main) { notification in
-            self.sendEvent(withName: APP_CONFIG_CHANGED, body: self.getAppConfig() ?? false)
+            if self.listeners > 0 { self.sendEvent(withName: APP_CONFIG_CHANGED, body: self.getAppConfig() ?? false) }
         }
     }
     deinit {
         NotificationCenter.default.removeObserver(self, name: UserDefaults.didChangeNotification, object: nil)
     }
     //MARK: Overrides
+    func addListener(_ eventName: String!) {
+        if eventName == APP_CONFIG_CHANGED { listeners = listeners + 1 }
+    }
+    func removeListeners(_ count: Double) {
+        listeners = listeners - count
+    }
     func requiresMainQueueSetup() -> Bool {
         return false
     }
