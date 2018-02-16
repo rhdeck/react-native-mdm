@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		5249653FFA104691B28CBD1B /* rn-swift-bridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F21DDD6F9014F1D83096314 /* rn-swift-bridge.m */; };
-		71D8F38A1FB7AA9D0000973C /* mdm_constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D8F3891FB7AA9D0000973C /* mdm_constants.swift */; };
 		71E84B9920372D1000FE7F9C /* RNMobileDeviceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E84B9820372D1000FE7F9C /* RNMobileDeviceManager.swift */; };
 /* End PBXBuildFile section */
 
@@ -28,7 +27,6 @@
 		6F21DDD6F9014F1D83096314 /* rn-swift-bridge.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; path = "rn-swift-bridge.m"; sourceTree = "<group>"; };
 		71D8F37C1FB7A97B0000973C /* libreact_native-mdm.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libreact_native-mdm.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		71D8F3881FB7AA9D0000973C /* rn-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "rn-Bridging-Header.h"; sourceTree = "<group>"; };
-		71D8F3891FB7AA9D0000973C /* mdm_constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mdm_constants.swift; sourceTree = "<group>"; };
 		71E84B9820372D1000FE7F9C /* RNMobileDeviceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RNMobileDeviceManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -64,7 +62,6 @@
 		71D8F37E1FB7A97B0000973C /* react_native-mdm */ = {
 			isa = PBXGroup;
 			children = (
-				71D8F3891FB7AA9D0000973C /* mdm_constants.swift */,
 				71E84B9820372D1000FE7F9C /* RNMobileDeviceManager.swift */,
 			);
 			path = "react_native-mdm";
@@ -136,7 +133,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				71D8F38A1FB7AA9D0000973C /* mdm_constants.swift in Sources */,
 				71E84B9920372D1000FE7F9C /* RNMobileDeviceManager.swift in Sources */,
 				5249653FFA104691B28CBD1B /* rn-swift-bridge.m in Sources */,
 			);
