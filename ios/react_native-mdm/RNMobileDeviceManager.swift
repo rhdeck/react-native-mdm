@@ -15,11 +15,11 @@ class RNMobileDeviceManager: RCTEventEmitter {
         NotificationCenter.default.removeObserver(self, name: UserDefaults.didChangeNotification, object: nil)
     }
     //MARK: Overrides
-    func addListener(_ eventName: String!) {
+    override func addListener(_ eventName: String!) {
         if eventName == APP_CONFIG_CHANGED { listeners = listeners + 1 }
     }
-    func removeListeners(_ count: Double) {
-        listeners = listeners - count
+    override func removeListeners(_ count: Double) {
+        listeners = listeners - Int(count)
     }
     func requiresMainQueueSetup() -> Bool {
         return false
