@@ -1,6 +1,6 @@
 {
   "name": "react-native-mdm",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "A mobile device management (MDM) module for react-native",
   "main": "index.js",
   "scripts": {
@@ -11,7 +11,7 @@
   "contributors": ["Ray Deck"],
   "license": "MIT",
   "peerDependencies": {
-    "react-native-swift": "^0.23.0"
+    "react-native-swift": "^1.0.0"
   },
   "devDependencies": {
     "react-native-swift-bridge": "rhdeck/react-native-swift-bridge"
